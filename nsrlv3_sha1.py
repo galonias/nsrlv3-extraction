@@ -20,7 +20,7 @@ with zipfile.ZipFile(args.zip_file) as zip_file:
         raise ValueError("No SQLite database file found in the zip file")
     with zip_file.open(db_file_name) as db_file:
         # Create a temporary file next to the zip file to store the database contents
-        temp_file_path = os.path.join(os.path.dirname(args.zip_file), 'db_file_name.db')
+        temp_file_path = os.path.join(os.path.dirname(args.zip_file), os.path.splitext(os.path.basename(args.zip_file))[0] + ".db")
         temp_file = open(temp_file_path, 'wb')
         chunk_size = 1024 * 1024  # 1 MB
         while True:
