@@ -5,7 +5,7 @@ import tempfile
 import zipfile
 import os.path
 
-parser = argparse.ArgumentParser(description='Extract unique MD5 and SHA1 combinations from an SQLite database inside a zip file.')
+parser = argparse.ArgumentParser(description='Extract unique MD5 and SHA1 combinations from an SQLite database inside a zip file to csv file with headers.')
 parser.add_argument('zip_file', type=str, help='path to the zip file containing the SQLite database')
 args = parser.parse_args()
 
